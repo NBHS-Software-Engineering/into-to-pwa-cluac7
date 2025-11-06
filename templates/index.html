@@ -1,16 +1,17 @@
 {% extends 'layout.html' %} {% block content %}
 <div class="container">
     {% for row in content %}
-<div class="card">
+<div style="background-color: #5a5a5a;" class="card">
   <img
     class="card-image"
-    src="{{ row[4] }}"
-    alt="Product image for the {{ row[1] }} VSCode extension."
+    src="{{ row[6] }}"
+    alt="Driver's Image"
   />
-  <h1 class="card-name">{{ row[1] }}</h1>
-  <p class="card-about">{{ row[3] }}</p>
-  <a class="card-link" href="{{ row[2] }}"
-    ><button class="btn">Read More</button></a
+  <h1 class="card-name">{{ row[2] }}</h1>
+  <h1 class="card-about">{{ row[1] }} <img class="flag-image" src="{{ row[7] }}" alt="driver flag"/></h1>
+  <h1 class="card-team">{{ row[4] }}</h1>
+  <a class="card-link" href="{{ row[3] }}"
+    ><button style="color: {{ row[5] }};" class="btn">Learn More</button></a
   >
 </div>
 {% endfor %}
