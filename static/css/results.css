@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+:root {
+  --bg: #1d2c35;
+  --muted: #9aa4b2;
+  --accent: #eaeaea;
+  font-family: "Titillium Web", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: var(--accent);
+}
+.wrap {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+}
+h1 {
+  font-size: 20px;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.6px;
+}
+.track {
+  display: grid;
+  grid-template-columns: 1fr 45px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.lane {
+  background: transparent;
+  padding: 6px 0;
+}
+.grid-wrap {
+  display: grid;
+  grid-template-rows: repeat(10, 64px);
+  gap: 20px;
+}
+
+/* driver card */
+.slot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.02)
+  );
+  box-shadow: 0 2px 8px rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  min-height: 64px;
+}
+
+.slot:hover {
+  transition: all 0.1s ease-in-out;
+}
+
+.slot.empty {
+  opacity: 0.25;
+}
+
+.team-strip {
+  width: 8px;
+  height: 100%;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.driver-number {
+  min-width: 34px;
+  text-align: center;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.driver-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.driver-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+.driver-team {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: left;
+}
+.driver-time {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.lane.left .grid-wrap .slot {
+  transform: translateY(-12px);
+}
+.lane.right .grid-wrap .slot {
+  transform: translateY(12px);
+}
+
+.position {
+  color: var(--accent);
+  width: 2rem;
+  text-align: center;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+  .track {
+    grid-template-columns: 1fr 56px 1fr;
+  }
+  .grid-wrap {
+    grid-template-rows: repeat(10, 56px);
+  }
+  .lane.left .grid-wrap .slot {
+    transform: translateY(8px);
+  }
+  .lane.right .grid-wrap .slot {
+    transform: translateY(-8px);
+  }
+}

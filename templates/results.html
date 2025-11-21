@@ -1,0 +1,96 @@
+{% extends 'layout.html' %} {% block content %}
+<link rel="stylesheet" href="static/css/results.css" />
+
+<div class="wrap">
+  <div class="track" role="table" aria-label="F1 starting grid">
+    <!-- LEFT LANE -->
+    <div class="lane left" aria-hidden="false">
+      <div class="grid-wrap">
+        {% for i in range(10) %} {% set idx = (i*2) % drivers|length %} {% set
+        left_pos = drivers[idx] if drivers|length > (i*2) else None %}
+        <div class="slot {% if not left_pos %}empty{% endif %}">
+          {% if left_pos %}
+          <div class="position">
+            <h2>{{left_pos.position}}</h2>
+          </div>
+          <div
+            class="driver-number"
+            style="background: color-mix(in oklab, {{ left_pos.colour if left_pos.colour is defined else '#222' }} 78%, #45515F);"
+          >
+            {{ left_pos.driverNumber }}
+          </div>
+          <div class="driver-meta">
+            <div class="driver-name">
+              {{ left_pos.givenName }} {{ left_pos.familyName }}
+            </div>
+            <div class="driver-team">{{ left_pos.team }}</div>
+          </div>
+          <div class="driver-time">
+            {{ left_pos.points if left_pos.points is defined else '' }}
+          </div>
+          {% else %}
+          <div
+            style="
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--muted);
+            "
+          >
+            —
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="center"></div>
+
+    <!-- RIGHT LANE -->
+    <div class="lane right">
+      <div class="grid-wrap">
+        {% for i in range(10) %} {% set idx = (i*2+1) % drivers|length %} {% set
+        right_pos = drivers[idx] if drivers|length > (i*2+1) else None %}
+        <div class="slot row-{{i+1}} {% if not right_pos %}empty{% endif %}">
+          {% if right_pos %}
+          <div class="position">
+            <h2>{{right_pos.position}}</h2>
+          </div>
+          <div
+            class="driver-number"
+            style="background: color-mix(in oklab, {{ right_pos.colour if right_pos.colour is defined else '#222' }} 78%, #45515F);"
+          >
+            {{ right_pos.driverNumber }}
+          </div>
+          <div class="driver-meta">
+            <div class="driver-name">
+              {{ right_pos.givenName }} {{ right_pos.familyName }}
+            </div>
+            <div class="driver-team">{{ right_pos.team }}</div>
+          </div>
+          <div class="driver-time">{{ right_pos.points }}</div>
+          {% else %}
+          <div
+            style="
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--muted);
+            "
+          >
+            —
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

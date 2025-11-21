@@ -1,7 +1,15 @@
 {% extends 'layout.html' %} {% block content %}
+
 <div class="container">
     {% for row in content %}
-<div style="background-color: #5a5a5a;" class="card">
+<style>
+  .card{{ row[0] }}:hover {box-shadow: 0 0 20px 5px {{ row[5] }} };
+</style>
+<div class="card card{{ row[0] }}"
+style="background-color: color-mix(in oklab, {{ row[5] }}
+{% if row[4] == "McLaren" %}80%{% endif %}
+, #45515F);"
+>
   <img
     class="card-image"
     src="{{ row[6] }}"

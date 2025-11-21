@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #1d2c35;
+  --accent: #eaeaea;
+  --f1: #de4643;
+}
+
 body {
-  background: #232424;
+  background: var(--bg);
   font-family: "Titillium Web", sans-serif;
   font-size: 1rem;
 }
@@ -19,6 +25,7 @@ main {
 }
 
 nav {
+  margin-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,15 +47,15 @@ nav li {
 nav ul li a {
   text-decoration-line: none;
   text-transform: uppercase;
-  color: #eaeaea;
+  color: var(--accent);
 }
 
 nav ul li a:hover {
-  color: #de4643;
+  color: var(--f1);
 }
 
 nav h1 {
-  color: #eaeaea;
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 .container {
@@ -69,8 +76,13 @@ nav h1 {
   border-radius: 10px;
   margin: auto;
   overflow: hidden;
-  border-color: #222;
-  color: whitesmoke
+  color: whitesmoke;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow */
+}
+
+.card:hover {
+  transition: all 0.1s ease-in-out;
+  filter: brightness(1.05);
 }
 
 .card-image {
@@ -79,35 +91,30 @@ nav h1 {
   object-fit: cover;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-}
-
 .flag-image {
   height: 0.8rem;
   width: auto;
 }
 
 .card-name {
-  color: #dedede;
+  color: var(--accent);
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 }
 
 .card-about {
-  color: #dedede;
+  color: var(--accent);
   font-weight: 700;
   text-transform: capitalize;
   font-size: 1.1rem;
 }
 
 .card-team {
-  color: #dedede;
+  color: var(--accent);
   font-weight: 600;
   text-transform: capitalize;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -120,15 +127,14 @@ nav h1 {
   margin: 0 1rem;
   padding: 0.25rem 2rem;
   transition: all 0.25s ease-in-out;
-  background: hsl(110, 21%, 93%);
+  background: var(--accent);
   margin-bottom: 1rem;
 }
 
 .btn:focus,
 .btn:hover {
-  box-shadow: 1px 1px 2px rgba(21, 21, 21, 0.2);
-  border-color: #a5a5a5;
-  border-style: solid;
+  transform: scale(1.05);
+  transition: all 0.1s ease-in-out;
 }
 
 .about-container {
