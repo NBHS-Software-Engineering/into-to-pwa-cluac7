@@ -2,10 +2,7 @@ const assets = [
   "/",
   "static/css/style.css",
   "static/js/app.js",
-  "static/images/f1.png",
-  "static/images/oscar-piastri.png",
-  "static/icons/desktop_screenshot.png",
-  "static/icons/mobile_screenshot.png",
+  "static/images/F1.png",
 ];
 
 const CATALOGUE_ASSETS = "catalogue-assets";

@@ -143,3 +143,77 @@ nav h1 {
   text-align: justify;
   text-justify: inter-word;
 }
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.menu-toggle:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hamburger {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--accent);
+}
+.hamburger::before {
+  top: -7px;
+}
+.hamburger::after {
+  top: 7px;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .topnav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 0.5rem;
+    background: rgba(29, 44, 53, 0.95);
+    border-radius: 6px;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .topnav.open {
+    display: flex;
+  }
+
+  .topnav li {
+    margin: 0.35rem 0;
+    text-align: left;
+    padding: 0 0.5rem;
+  }
+
+  .topnav li a {
+    display: block;
+    padding: 0.5rem 0.25rem;
+  }
+}

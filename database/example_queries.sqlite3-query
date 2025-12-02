@@ -1,0 +1,6 @@
+-- database: ./data_source.db
+-- CREATE TABLE "drivers"(rowID INTEGER NOT NULL PRIMARY KEY, driverNum INTEGER NOT NULL,name TEXT NOT NULL, infoLink TEXT NOT NULL,team TEXT NOT NULL,bgColour TEXT NOT NULL,imageLink TEXT NOT NULL, flagLink TEXT NOT NULL)
+
+--INSERT INTO drivers(rowID,driverNum,name,infoLink,team,bgColour,imageLink,flagLink) VALUES (1,81,"Oscar Piastri","https://en.wikipedia.org/wiki/Oscar_Piastri","McLaren","#e4901b", "https://preview.redd.it/new-official-drivers-portraits-for-2025-v0-06t5tpb1d6oe1.jpg?width=1080&crop=smart&auto=webp&s=091a25aa179d9adb8ea632389e9c0b9f9ec0423c","https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg");
+
+-- SELECT * FROM "drivers";

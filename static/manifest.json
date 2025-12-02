@@ -1,10 +1,10 @@
 {
-  "name": "VSCode Extension Catalogue",
-  "short_name": "vscodeextcat",
+  "name": "F1 Stats",
+  "short_name": "f1stat",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fdfdfd",
-  "theme_color": "#14E6DD",
+  "background_color": "#1d2c35",
+  "theme_color": "#eaeaea",
   "orientation": "landscape-primary",
   "icons": [
     {

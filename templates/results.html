@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="static/css/results.css" />
 
 <div class="wrap">
-  <div class="track" role="table" aria-label="F1 starting grid">
+  <div class="track" role="table">
     <!-- LEFT LANE -->
-    <div class="lane left" aria-hidden="false">
+    <div class="lane left">
       <div class="grid-wrap">
         {% for i in range(10) %} {% set idx = (i*2) % drivers|length %} {% set
         left_pos = drivers[idx] if drivers|length > (i*2) else None %}
