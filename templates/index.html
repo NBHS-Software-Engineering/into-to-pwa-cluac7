@@ -1,27 +1,4 @@
 {% extends 'layout.html' %} {% block content %}
+<div class="container">{% include 'partials/cards.html' %}</div>
 
-<div class="container">
-    {% for row in content %}
-<style>
-  .card{{ row[0] }}:hover {box-shadow: 0 0 20px 5px {{ row[5] }} };
-</style>
-<div class="card card{{ row[0] }}"
-style="background-color: color-mix(in oklab, {{ row[5] }}
-{% if row[4] == "McLaren" %}80%{% endif %}
-, #45515F);"
->
-  <img
-    class="card-image"
-    src="{{ row[6] }}"
-    alt="Driver's Image"
-  />
-  <h1 class="card-name">{{ row[2] }}</h1>
-  <h1 class="card-about">{{ row[1] }} <img class="flag-image" src="{{ row[7] }}" alt="driver flag"/></h1>
-  <h1 class="card-team">{{ row[4] }}</h1>
-  <a class="card-link" href="{{ row[3] }}"
-    ><button style="color: {{ row[5] }};" class="btn">Learn More</button></a
-  >
-</div>
-{% endfor %}
-</div>
 {% endblock %}

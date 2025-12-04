@@ -5,8 +5,12 @@
   box-sizing: border-box;
 }
 
+h1.f1 {
+  display: block;
+}
+
 :root {
-  --bg: #1d2c35;
+  --bg: #162127;
   --accent: #eaeaea;
   --f1: #de4643;
 }
@@ -29,6 +33,17 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* make title centred */
+nav {
+  position: relative;
+}
+nav h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
 nav img {
@@ -91,9 +106,68 @@ nav h1 {
   object-fit: cover;
 }
 
+/* status banner for offline/online */
+.status {
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.02);
+  display: none;
+}
+.status.visible {
+  display: block;
+}
+
 .flag-image {
   height: 0.8rem;
   width: auto;
+}
+
+/* visually hidden helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* nav search: sits below the nav and is centred */
+.nav-search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+}
+.nav-search input {
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: none;
+  max-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Teams summary table */
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.teams-table th,
+.teams-table td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  color: var(--accent);
+}
+.teams-table thead th {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .card-name {
@@ -182,6 +256,9 @@ nav h1 {
 }
 
 @media (max-width: 600px) {
+  h1.f1 {
+    display: none;
+  }
   nav {
     flex-wrap: wrap;
     gap: 0.5rem;

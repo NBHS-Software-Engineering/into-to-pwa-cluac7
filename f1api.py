@@ -48,5 +48,6 @@ def get_championship():
     standingsDict = standings.content[0].to_dict(orient='records')
     
     return standingsDict
-
-get_championship()
+if __name__ == "__main__":
+    # allow module to be run for quick debugging
+    get_championship()

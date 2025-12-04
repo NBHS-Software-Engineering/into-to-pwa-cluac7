@@ -1,15 +1,32 @@
-<nav>
-  <img src="static/images/f1.png" alt="F1 logo." />
-  <h1>Formula 1</h1>
-
+<nav role="navigation" aria-label="Main navigation">
+  <img src="/static/images/f1.png" alt="F1 logo." />
+  <h1 class="f1">Formula One</h1>
   <!-- Menu toggle shown on small screens -->
-  <button id="menu-toggle" class="menu-toggle">
-    <span class="hamburger"></span>
+  <button
+    id="menu-toggle"
+    class="menu-toggle"
+    aria-expanded="false"
+    aria-controls="main-nav"
+  >
+    <span class="hamburger" aria-hidden="true"></span>
   </button>
 
   <ul id="main-nav" class="topnav" role="menubar">
-    <li role="none"><a role="menuitem" href="index.html">Home</a></li>
-    <li role="none"><a role="menuitem" href="teams.html">Teams</a></li>
-    <li role="none"><a role="menuitem" href="results.html">Championship</a></li>
+    <li role="none"><a role="menuitem" href="/index.html">Home</a></li>
+    <li role="none">
+      <a role="menuitem" href="/results.html">Championship</a>
+    </li>
   </ul>
+</ul>
 </nav>
+
+<!-- Search input sits below the main navigation -->
+<div class="nav-search" role="search">
+  <label for="search-input" class="sr-only">Search drivers</label>
+  <input
+    id="search-input"
+    type="search"
+    placeholder="Search drivers or teams"
+    aria-label="Search drivers or teams"
+  />
+</div>

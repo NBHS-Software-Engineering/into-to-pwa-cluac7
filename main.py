@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import jsonify
 import database_manager as dbHandler
 import f1api
 
@@ -12,10 +13,16 @@ def index():
    data = dbHandler.listExtension()
    return render_template('/index.html', content=data)
 
-@app.route('/teams.html', methods=['GET'])
-def teams():
-   data = dbHandler.listExtension()
-   return render_template('/teams.html', content=data)
+
+@app.route('/api/search')
+def api_search():
+   q = request.args.get('q', '').strip()
+   if q == '':
+      data = dbHandler.listExtension()
+   else:
+      data = dbHandler.search_drivers(q)
+   # return rendered HTML fragment to insert into the page
+   return render_template('partials/cards.html', content=data)
 
 # The main route for the F1 Starting Grid
 @app.route('/results.html')

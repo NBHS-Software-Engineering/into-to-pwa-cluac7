@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 :root {
-  --bg: #1d2c35;
+  --bg: #162127;
   --muted: #9aa4b2;
   --accent: #eaeaea;
   font-family: "Titillium Web", sans-serif;
@@ -20,6 +20,9 @@ h1 {
   font-size: 20px;
   margin: 0 0 14px 0;
   letter-spacing: 0.6px;
+}
+h1.f1 {
+  font-size: 2em;
 }
 .track {
   display: grid;

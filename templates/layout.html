@@ -13,8 +13,18 @@
 
   <body>
     <main>
-      {% include "partials/menu.html" %} {% block content %}{% endblock %}
+      {% include "partials/menu.html" %}
+
+      <!-- Offline / status banner -->
+      <div
+        id="status"
+        class="status"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
+
+      <div id="content">{% block content %}{% endblock %}</div>
     </main>
-    <script src="static/js/app.js"></script>
+    <script src="/static/js/app.js"></script>
   </body>
 </html>
